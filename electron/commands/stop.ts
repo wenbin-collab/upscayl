@@ -6,7 +6,7 @@ const stop = async (event, payload) => {
   const mainWindow = getMainWindow();
 
   setStopped(true);
-  mainWindow && mainWindow.setProgressBar(-1);
+   mainWindow?.setProgressBar(-1);
   childProcesses.forEach((child) => {
     logit("🛑 Stopping Upscaling Process", child.process.pid);
     child.kill();
