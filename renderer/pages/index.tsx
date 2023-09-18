@@ -313,15 +313,15 @@ const Home = () => {
   // DRAG AND DROP HANDLERS
   const handleDragEnter = (e) => {
     e.preventDefault();
-    console.log("drag enter");
+    
   };
   const handleDragLeave = (e) => {
     e.preventDefault();
-    console.log("drag leave");
+    
   };
   const handleDragOver = (e) => {
     e.preventDefault();
-    console.log("drag over");
+    
   };
 
   const openFolderHandler = (e) => {

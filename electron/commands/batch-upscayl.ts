@@ -119,7 +119,7 @@ const batchUpscayl = async (event, payload) => {
       const files = fs.readdirSync(inputDir);
       try {
         files.forEach(async (file) => {
-          console.log("Filename: ", file.slice(0, -3));
+          
           await convertAndScale(
             inputDir + slash + file,
             outputDir + slash + file.slice(0, -3) + "png",
