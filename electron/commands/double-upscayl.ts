@@ -109,8 +109,8 @@ const doubleUpscayl = async (event, payload) => {
     mainWindow.webContents.send(COMMAND.DOUBLE_UPSCAYL_PROGRESS, data);
     // SET FAILED TO TRUE
     failed = true;
-    mainWindow &&
-      mainWindow.webContents.send(
+    
+      mainWindow?.webContents.send(
         COMMAND.UPSCAYL_ERROR,
         "Error upscaling image. Error: " + data
       );
@@ -148,8 +148,8 @@ const doubleUpscayl = async (event, payload) => {
         );
       } catch (error) {
         logit("❌ Error reading original image metadata", error);
-        mainWindow &&
-          mainWindow.webContents.send(
+        
+          mainWindow?.webContents.send(
             COMMAND.UPSCAYL_ERROR,
             "Error processing (scaling and converting) the image. Please report this error on Upscayl GitHub Issues page."
           );
@@ -199,8 +199,8 @@ const doubleUpscayl = async (event, payload) => {
         mainWindow.webContents.send(COMMAND.DOUBLE_UPSCAYL_PROGRESS, data);
         // SET FAILED TO TRUE
         failed2 = true;
-        mainWindow &&
-          mainWindow.webContents.send(
+        
+          mainWindow?.webContents.send(
             COMMAND.UPSCAYL_ERROR,
             "Error upscaling image. Error: " + data
           );

@@ -101,8 +101,8 @@ const batchUpscayl = async (event, payload) => {
     );
     failed = true;
     upscayl.kill();
-    mainWindow &&
-      mainWindow.webContents.send(
+    
+      mainWindow?.webContents.send(
         COMMAND.UPSCAYL_ERROR,
         "Error upscaling image. Error: " + data
       );
@@ -114,7 +114,7 @@ const batchUpscayl = async (event, payload) => {
       logit("💯 Done upscaling");
       logit("♻ Scaling and converting now...");
       upscayl.kill();
-      mainWindow && mainWindow.webContents.send(COMMAND.SCALING_AND_CONVERTING);
+       mainWindow?.webContents.send(COMMAND.SCALING_AND_CONVERTING);
       // Get number of files in output folder
       const files = fs.readdirSync(inputDir);
       try {
@@ -137,8 +137,8 @@ const batchUpscayl = async (event, payload) => {
       } catch (error) {
         logit("❌ Error processing (scaling and converting) the image.", error);
         upscayl.kill();
-        mainWindow &&
-          mainWindow.webContents.send(
+        
+          mainWindow?.webContents.send(
             COMMAND.UPSCAYL_ERROR,
             "Error processing (scaling and converting) the image. Please report this error on Upscayl GitHub Issues page."
           );
